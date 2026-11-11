@@ -1,0 +1,43 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PAGE LOGIN</title>
+        <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" href="{% static 'pages/style.css' %}">
+        <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Roboto&display=sawp"rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <div class="separation">
+                <h1>Bonjour, Bienvenue!</h1>
+                <p>Avez-vous un compte?</p>
+                <a href="{% url 'connexion' %}">
+                    <button type="submit" class="connexion">Se connecter</button>
+                </a>
+            </div>
+            <form action="page.html" method="post">
+                <h1 class="inscription">Inscription</h1>
+                <div class="case">
+                    <i class="bi bi-person"></i>
+                    <input type="text" placeholder="Nom d'utilisateur" required>
+                </div>
+                <div class="case">
+                    <i class="bi bi-lock"></i>
+                    <button type="button" onclick="afficherCacher()" class="oeil">
+                        <i class="bi bi-eye-slash" id="icone"></i>
+                    </button>
+                    <input type="password" id="mdp" placeholder="Mot de passe" required>
+                </div>
+                <a href="{% url 'connexion' %}">
+                    <button type="submit" class="creation">Créer un compte</button>
+                </a>
+                <button type="reset" class="Annuler">Annuler</button>
+            </form>
+        </div>
+    </body>
+

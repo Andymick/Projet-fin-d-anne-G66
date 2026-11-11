@@ -1,0 +1,151 @@
+body{
+    background-color: #6B4632;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    display: flex;
+    background-color: #FCECCF;
+    width: 900px;
+    height: 500px;
+    overflow: hidden;
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.separation{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 45%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #FCECCF;
+    background-color: #442D1D;
+    border-radius: 30px 150px 150px 30px;
+}
+h1{
+    font-family: Arial,  sans-serif;
+    font-size: xx-large;
+    font-weight: bold;
+}
+p{
+    font-family: Arial, sans-serif;
+    font-size: large;
+    font-weight: 100;
+}
+.connexion{
+    border: #FCECCF solid;
+    border-radius: 10px;
+    padding: 10px;
+
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: #FCECCF;
+    font-weight: 100;
+    letter-spacing: 1px;
+    background-color: #442D1D;
+
+    transition: 3ms ease;
+    cursor: pointer;
+}
+.case{
+    position: relative;
+    width: 350px;
+    margin-bottom: 20px auto;
+}
+.case i{
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.case{
+    position: relative;
+    width: 400px;
+}
+.case {
+    position: relative;
+    margin-bottom: 15px;
+}
+.case input{
+    width: 100%;
+    padding: 10px 40px;
+    box-sizing: border-box;
+}
+.case>i{
+    position: absolute;
+    left: 8px;
+    top:50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+.oeil{
+    position: absolute;
+    right: 35px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.inscription{
+    margin: 60px 0 40px 0;
+    font-family: Arial, sans-serif;
+    color: #442D1D;
+    font-weight: bold;
+    font-size: xx-large;
+}
+.container form{
+    flex: 1;
+    display: flex;
+    flex-direction:column ;
+    justify-content: start;
+    align-items: center;
+    height: 100%;
+    gap: 40px;
+}
+.creation{
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #442D1D;
+    border: #442D1D solid;
+    color: #FCECCF;
+    width: 300px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+}
+.Annuler{
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #442D1D;
+    border: #442D1D;
+    color: #FCECCF;
+    width: 150px;
+    font-weight: bold;
+}
+button:hover{
+    background-color: #6B4632;
+    transform: scale(1.15);
+}
+.case input:focus{
+    outline: none;
+    border-color: #442D1D;
+}
+@keyframes apparition{
+    from{
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.container{
+    animation: apparition 0.8s ease;
+}
