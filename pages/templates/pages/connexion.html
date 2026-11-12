@@ -16,7 +16,7 @@
                 <h1>Bon retour!</h1>
                 <p>Connectez-vous pour récupérer votre compte</p>
             </div>
-            <form action="{% url 'Connexion' %}" method="post">
+            <form action="{% url 'connexion' %}" method="post">
                 <h2>Veuillez remplir vos informations</h2>
                 <div class="case">
                     <i class="bi bi-person"></i>
@@ -31,8 +31,8 @@
                 </div>
                     <button type="submit" class="creation">Connexion</button>
                 <button type="reset" class="Annuler">Annuler</button>
-                <a href="index.html">
-                    <button type="submit" onclick="window.location.href='index.html'" class="creation">Retour</button>
+                <a href="{% url 'inscription' %}" class="retour">
+                    retour
                 </a>
             </form>
         </div>
