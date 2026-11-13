@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PAGE LOGIN</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Roboto&display=sawp"rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'pages/style.css' %}">
+    </head>
+    <body>
+        <div class="container">
+            <!-- tsy kitina -->
+            <div class="left_side">
+                <h1>Bonjour, Bienvenue!</h1>
+                <p>Avez-vous un compte?</p>
+                <a href="{% url 'connexion' %}">
+                    <button type="submit" class="connexion">Se connecter</button>
+                </a>
+            </div>
+            <!-- ---------- -->
+
+            <!-- ----------------------formulaire-------------------------- -->
+            <div class="right_side">
+
+                <p class="text_haut">Inscription</p>
+
+
+                <form action="" method="post">
+                    {% csrf_token %}
+                    {% if erreur %}
+                        <p class="erreur">{{erreur}}</p>
+                    {% endif %}
+                    <div class="case">
+                        <i class="bi bi-person"></i>
+                        <input name="username" type="text" placeholder="Nom d'utilisateur" required>
+                    </div>
+
+                    <div class="case">
+                        <i class="bi bi-lock"></i>
+                        <button type="button" onclick="afficherCacher1()" class="oeil">
+                            <i class="bi bi-eye-slash" id="icone1"></i>
+                        </button>
+                        <input name="password" type="password" id="mdp1" placeholder="Mot de passe" required>
+                        
+                    </div>
+                    <div class="case">
+                        <i class="bi bi-lock"></i>
+                        <button type="button" onclick="afficherCacher2()" class="oeil">
+                            <i class="bi bi-eye-slash" id="icone2"></i>
+                        </button>
+                        <input name="password2" type="password" id="mdp2" placeholder="Confirmation" required>
+                        
+                    </div>
+                    
+                        <button type="submit" class="button">Créer un compte</button>
+                </form>
+            </div>
+            <!-- ----------------------formulaire-------------------------- -->
+              
+        </div>
+        <script>
+            function afficherCacher1(){
+                let mdp= document.getElementById("mdp1");
+                let icone= document.getElementById("icone1");
+                if(mdp.type==="password"){
+                    mdp.type="text";
+                    icone.className="bi bi-eye";
+                }
+                else{
+                    mdp.type="password";
+                    icone.className="bi bi-eye-slash";
+                }
+            }
+            function afficherCacher2(){
+                let mdp= document.getElementById("mdp2");
+                let icone= document.getElementById("icone2");
+                if(mdp.type==="password"){
+                    mdp.type="text";
+                    icone.className="bi bi-eye";
+                }
+                else{
+                    mdp.type="password";
+                    icone.className="bi bi-eye-slash";
+                }
+            }
+        </script>
+    </body>
+

@@ -1,3 +1,10 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Arial,  sans-serif;
+    box-sizing: border-box;
+}
 body{
     background-color: #6B4632;
     margin: 0;
@@ -16,11 +23,11 @@ body{
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-.separation{
+.left_side{
     display: flex;
     flex-direction: column;
-    gap: 15px;
     width: 45%;
+    gap: 10px;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -28,21 +35,28 @@ body{
     background-color: #442D1D;
     border-radius: 30px 150px 150px 30px;
 }
-h1{
-    font-family: Arial,  sans-serif;
+.right_side{
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+    align-items: center;
+    justify-content: center;
+
+}
+.text_haut{
     font-size: xx-large;
     font-weight: bold;
+    margin-bottom: 50px;
 }
-p{
-    font-family: Arial, sans-serif;
+/* p{
     font-size: large;
     font-weight: 100;
-}
+} */
+
 .connexion{
     border: #FCECCF solid;
     border-radius: 10px;
     padding: 10px;
-
     font-family: Arial, sans-serif;
     text-align: center;
     color: #FCECCF;
@@ -53,10 +67,12 @@ p{
     transition: 3ms ease;
     cursor: pointer;
 }
+
 .case{
-    position: relative;
-    width: 350px;
+    width: 100%;
     margin-bottom: 20px auto;
+    position: relative;
+    margin-bottom: 15px;
 }
 .case i{
     position: absolute;
@@ -64,14 +80,7 @@ p{
     top: 50%;
     transform: translateY(-50%);
 }
-.case{
-    position: relative;
-    width: 400px;
-}
-.case {
-    position: relative;
-    margin-bottom: 15px;
-}
+
 .case input{
     width: 100%;
     padding: 10px 40px;
@@ -100,42 +109,42 @@ p{
     font-weight: bold;
     font-size: xx-large;
 }
+
 .container form{
-    flex: 1;
+    
     display: flex;
     flex-direction:column ;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
-    height: 100%;
-    gap: 20px;
 }
-.creation{
+.button{
     border-radius: 10px;
-    padding: 10px;
+    padding: 5px;
     background-color: #442D1D;
     border: #442D1D solid;
+    font-size: 16px;
     color: #FCECCF;
-    width: 300px;
+    width: 100%;
     font-weight: bold;
     font-family: Arial, sans-serif;
+    transition: 0.3s ease;
 }
-.Annuler{
-    border-radius: 10px;
-    padding: 10px;
-    background-color: #442D1D;
-    border: #442D1D;
-    color: #FCECCF;
-    width: 150px;
-    font-weight: bold;
+
+.erreur{
+    color: red;
+    font-size: 14px;
 }
+
 button:hover{
     background-color: #6B4632;
-    transform: scale(1.15);
+    transform: scale(1.05);
 }
 .case input:focus{
     outline: none;
     border-color: #442D1D;
 }
+
+
 @keyframes apparition{
     from{
         opacity: 0;

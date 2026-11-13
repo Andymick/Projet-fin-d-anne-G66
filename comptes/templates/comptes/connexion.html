@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Connexion</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" href="{% static 'pages/style.css' %}">
+    </head>
+    <body>
+        <div class="container">
+            <!-- tsy kitina -->
+            <div class="left_side">
+                <h1>Bon retour!</h1>
+                <p>Connectez-vous pour récupérer votre compte</p>
+            </div>
+            <!-- ---------- -->
+
+            <!-- ----------------------formulaire-------------------------- -->
+            <div class="right_side">
+                <p class="text_haut">Connexion</p>
+                <form action="" method="post">
+
+                    {% csrf_token %}
+
+                    <div class="case">
+                        <i class="bi bi-person"></i>
+                        <input name="username" type="text" placeholder="Nom d'utilisateur" required>
+                    </div>
+
+                    <!-- ----------------------->
+                    <div class="case">
+                        <i class="bi bi-lock"></i>
+                        <button type="button" onclick="afficherCacher()" class="oeil">
+                            <i class="bi bi-eye-slash" id="icone"></i>
+                        </button>
+                        <input name="password" id="mdp" placeholder="Mot de passe" required>
+                    </div>
+                    <!-- ----------------------->
+
+                    <button type="submit" class="button">Connexion</button>
+
+                    <p style="color: grey; margin-top: 10px; margin-bottom: 10px;">---------------------</p>
+                    <p style="font-size: 14px;">Vous n'avez pas de compte? <a style="color: black;" href="{% url 'inscription' %}">S'inscrire</a></p>
+                </form>
+            </div>
+            <!-- ----------------------formulaire-------------------------- -->
+        </div>
+        <script>
+            function afficherCacher(){
+                let mdp= document.getElementById("mdp");
+                let icone= document.getElementById("icone");
+                if(mdp.type==="password"){
+                    mdp.type="text";
+                    icone.className="bi bi-eye";
+                }
+                else{
+                    mdp.type="password";
+                    icone.className="bi bi-eye-slash";
+                }
+            }
+        </script>
+    </body>
+</html>
